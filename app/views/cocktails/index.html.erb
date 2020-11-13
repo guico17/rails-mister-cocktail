@@ -1,14 +1,14 @@
- <body>
- <div class= "banner-image"><%= cl_image_tag 'https://res.cloudinary.com/dlu9wclb0/image/upload/v1605275501/qhtf5i7mssv6jd7q3a8x.jpg'%></div>
- <br>
+<center><h1><%= 'Cocktails bien moches' %></h1>
+ <!--  -->
+</center>
+<br>
 <br>
 <ul>
   <% @cocktails.each do |cocktail| %>
-    <h1><%= cocktail.name %><%= cl_image_tag cocktail.photo.key, height: 300, width: 400, crop: :fill %></h1><button type="button" class="btn btn-outline-primary"><%= link_to 'Voir le détail', cocktail_path(cocktail) %></button>
+    <h1><%= cocktail.name %></h1><%= cl_image_tag cocktail.photo.key, height: 300, width: 400, crop: :fill %><br><br><button type="button" class="btn btn-outline-primary"><%= link_to 'Voir le détail', cocktail_path(cocktail) %></button>
   <br>
   <br>
   <% end %>
   <br>
 <button type="button" class="btn btn-outline-primary"><%= link_to 'Ajouter un cocktail', new_cocktail_path(@cocktails) %></button>
 </ul>
-</body>
